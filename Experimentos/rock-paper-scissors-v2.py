@@ -1,33 +1,39 @@
 import random
 
-Variables = ("piedra","papel","tijeras")
+choices = ("rock", "paper", "scissors")
 
-puntos_jugador = 0
-puntos_pc = 0
+player_points = 0
+pc_points = 0
 
-print("Bienvenido al juego de piedra, papel y tijeras \n")
-print("Recuerda si quieres terminar el juego solo escribe: Salir \n ")
+print("Welcome to Rock, Paper, Scissors! \n")
+print("Remember, if you want to end the game, just type: exit \n")
+
 while True:
-    Respuesta_Jugador = input("Elige Piedra, Papel o Tijeras: ").lower().strip()
-    Respuesta_PC= random.choice(Variables)
-    if Respuesta_Jugador == Respuesta_PC:
-        print("¡Empate, los 2 han elegido ",Respuesta_PC, "+ 1 pnt!")
-        puntos_jugador += 1
-        puntos_pc += 1
-    elif Respuesta_Jugador == "piedra" and Respuesta_PC == "tijeras":
-        puntos_jugador += 1
-        print("¡Ganaste! La piedra aplasta las tijeras. + 1 pnt")
-    elif Respuesta_Jugador == "papel" and Respuesta_PC == "piedra":
-        puntos_jugador += 1
-        print("¡Ganaste! El papel vence a la piedra. + 1 pnt")
-    elif Respuesta_Jugador == "tijeras" and Respuesta_PC == "papel":
-        puntos_jugador += 1
-        print("¡Ganaste! Las tijeras cortan al papel. + 1 pnt")
-    else:
-        print("¡Perdiste! La computadora te ha vencido.")
-        puntos_pc += 1
-        print(f"La computadora ha elegido: {Respuesta_PC}")
-    if Respuesta_Jugador == "salir":
-        print("¡Gracias por jugar!")
-        print(f"Marcador Final -> Tú: {puntos_jugador} | PC: {puntos_pc}")
+    player_choice = input("Choose Rock, Paper, or Scissors: ").lower().strip()
+    
+    # Check for exit first to prevent the PC from getting an unfair point
+    if player_choice == "exit":
+        print("Thanks for playing!")
+        print(f"Final Score -> You: {player_points} | PC: {pc_points}")
         break
+        
+    pc_choice = random.choice(choices)
+    
+    if player_choice == pc_choice:
+        print(f"Tie! Both chose {pc_choice}. +1 point each!")
+        player_points += 1
+        pc_points += 1
+    elif player_choice == "rock" and pc_choice == "scissors":
+        player_points += 1
+        print("You win! Rock smashes scissors. +1 point")
+    elif player_choice == "paper" and pc_choice == "rock":
+        player_points += 1
+        print("You win! Paper beats rock. +1 point")
+    elif player_choice == "scissors" and pc_choice == "paper":
+        player_points += 1
+        print("You win! Scissors cut paper. +1 point")
+    else:
+        print("You lose! The computer has defeated you.")
+        pc_points += 1
+        print(f"The computer chose: {pc_choice}")
+        

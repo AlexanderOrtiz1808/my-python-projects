@@ -1,90 +1,98 @@
-print("¡Bienvenido a la Mini Trivia!")
-print("Cultura general")
+print("Welcome to Mini Trivia!")
+print("General Knowledge\n")
 
-IntentosP1 = 3
-IntentosP2 = 3
-IntentosP3= 3
-IntentosP4 = 3
-IntentosP5 = 3
+attempts_q1 = 3
+attempts_q2 = 3
+attempts_q3 = 3
+attempts_q4 = 3
+attempts_q5 = 3
 
-Puntos=0
-Llave=0
-#Pregunta 1
-while IntentosP1>0:
-    respuesta = input("Pregunta 1: ¿Cuál es el lugar más frío de la tierra?")
-    if respuesta == "Antártida":
-        print("¡Correcto! Te has ganado 10 puntos.")
-        Puntos += 10
-        Llave += 1
+points = 0
+key = 0
+
+# Question 1
+while attempts_q1 > 0:
+    response = input("Question 1: What is the coldest place on Earth? ")
+    if response == "Antarctica":
+        print("Correct! You have earned 10 points.\n")
+        points += 10
+        key += 1
         break
     else:
-        IntentosP1 -= 1
-        print(f"Respuesta incorrecta. Te quedan {IntentosP1} intentos.")
-if IntentosP1==0:
-    print("Tienes cero puntos en esta pregunta, ¡Buena surte en las siguientes preguntas!")
-    Llave += 1
-#Pregunta 2
-if Llave == 1:
-    while IntentosP2 > 0:
-            respuesta2 = input("Pregunta 2: ¿Cuál es el río más largo del mundo?")
-            if respuesta2 == "Amazonas":
-                print("¡Correcto! Te has ganado 10 puntos.")
-                Puntos += 10
-                Llave += 1
-                break
-            else:
-                IntentosP2 -= 1
-                print(f"Respuesta incorrecta. Te quedan {IntentosP2} intentos.")
-    if IntentosP2==0:
-        print("Tienes cero puntos en esta pregunta, ¡Buena surte en las siguientes preguntas!")
-        Llave += 1
+        attempts_q1 -= 1
+        print(f"Incorrect answer. You have {attempts_q1} attempts left.\n")
 
-#Pregunta 3
-if Llave == 2:
-    while IntentosP3 > 0:
-        respuesta3 = input("Pregunta 3: ¿Dónde originaron los juegos olímpicos?")
-        if respuesta3 == "Grecia":
-            print("¡Correcto! Te has ganado 10 puntos.")
-            Puntos += 10
-            Llave += 1
+if attempts_q1 == 0:
+    print("You got zero points on this question. Good luck with the next ones!\n")
+    key += 1
+
+# Question 2
+if key == 1:
+    while attempts_q2 > 0:
+        response2 = input("Question 2: What is the longest river in the world? ")
+        if response2 == "Amazon":
+            print("Correct! You have earned 10 points.\n")
+            points += 10
+            key += 1
             break
         else:
-            IntentosP3 -= 1
-            print(f"Respuesta incorrecta. Te quedan {IntentosP3} intentos.")
-    if IntentosP3==0:
-        print("Tienes cero puntos en esta pregunta, ¡Buena surte en las siguientes preguntas!")
-        Llave += 1
+            attempts_q2 -= 1
+            print(f"Incorrect answer. You have {attempts_q2} attempts left.\n")
+
+    if attempts_q2 == 0:
+        print("You got zero points on this question. Good luck with the next ones!\n")
+        key += 1
+
+# Question 3
+if key == 2:
+    while attempts_q3 > 0:
+        response3 = input("Question 3: Where did the Olympic Games originate? ")
+        if response3 == "Greece":
+            print("Correct! You have earned 10 points.\n")
+            points += 10
+            key += 1
+            break
+        else:
+            attempts_q3 -= 1
+            print(f"Incorrect answer. You have {attempts_q3} attempts left.\n")
+
+    if attempts_q3 == 0:
+        print("You got zero points on this question. Good luck with the next ones!\n")
+        key += 1
         
-#Pregunta 4
-if Llave == 3:
-    while IntentosP4 > 0:
-        respuesta4 = input("Pregunta 4: ¿Qué cantidad de huesos en el cuerpo humano?")
-        if respuesta4 == "206":
-            print("¡Correcto! Te has ganado 10 puntos.")
-            Puntos += 10
-            Llave += 1
+# Question 4
+if key == 3:
+    while attempts_q4 > 0:
+        response4 = input("Question 4: How many bones are in the human body? ")
+        if response4 == "206":
+            print("Correct! You have earned 10 points.\n")
+            points += 10
+            key += 1
             break
         else:
-            IntentosP4 -= 1
-            print(f"Respuesta incorrecta. Te quedan {IntentosP4} intentos.")
-    if IntentosP4==0:
-        print("Tienes cero puntos en esta pregunta, ¡Buena surte en las siguiente pregunta!")
-        Llave += 1        
+            attempts_q4 -= 1
+            print(f"Incorrect answer. You have {attempts_q4} attempts left.\n")
 
-#Pregunta 5
-if Llave == 4:
-    while IntentosP5 > 0:
-        respuesta5 = input("Pregunta 5: ¿Cuál es el país más grande del mundo?")
-        if respuesta5 == "Rusia":
-            print("¡Correcto! Te has ganado 10 puntos.")
-            Puntos += 10
-            print(f"Felicidades haz logrado {Puntos}/50 puntos en total")
-            print("Gracias por tu participación")
+    if attempts_q4 == 0:
+        print("You got zero points on this question. Good luck with the next question!\n")
+        key += 1        
+
+# Question 5
+if key == 4:
+    while attempts_q5 > 0:
+        response5 = input("Question 5: What is the largest country in the world? ")
+        if response5 == "Russia":
+            print("Correct! You have earned 10 points.\n")
+            points += 10
+            print(f"Congratulations! You scored {points}/50 points in total.")
+            print("Thank you for playing!")
             break
         else:
-            IntentosP5 -= 1
-            print(f"Respuesta incorrecta. Te quedan {IntentosP5} intentos.")
-    if IntentosP5==0:
-        print("Tienes cero puntos en esta pregunta, ¡Buena surte en la proxima!")  
-        print(f"Felicidades haz logrado {Puntos}/50 puntos en total")             
-        print("Gracias por tu participación")        
+            attempts_q5 -= 1
+            print(f"Incorrect answer. You have {attempts_q5} attempts left.\n")
+
+    if attempts_q5 == 0:
+        print("You got zero points on this question. Better luck next time!\n")  
+        print(f"Congratulations! You scored {points}/50 points in total.")             
+        print("Thank you for playing!")
+        

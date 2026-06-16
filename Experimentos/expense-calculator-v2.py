@@ -1,18 +1,24 @@
-print("Bienvenido a tu calculadora de gastos. \n")
-Presupuesto_inicial = int(input("¿Cúal es tu presupuesto del dia de hoy? "))
-while Presupuesto_inicial > 0:
-    Compras = input("¿Qué comprarás? ")
-    Gastos = int(input("¿Cuánto gastarás en eso? "))
-    if Gastos > Presupuesto_inicial:
-        print("¡Fondos insuficientes! No puedes comprar eso.\n")
+print("Welcome to your expense calculator. \n")
+initial_budget = int(input("What is your budget for today? "))
+
+while initial_budget > 0:
+    purchase = input("What will you buy? ")
+    expense = int(input("How much will you spend on that? "))
+    
+    if expense > initial_budget:
+        print("Insufficient funds! You cannot buy that.\n")
     else:
-        Presupuesto_inicial -= Gastos
-        print(f"Gasto registrado. Te quedarán {Presupuesto_inicial} pesos.\n")
-    Respuesta = input("¿Quieres registrar otro gasto? ")
-    if Respuesta.lower().strip() == "si" or Respuesta.lower().strip() == "sí":
-        print("Okay, continuamos.\n ")
-    elif Respuesta.lower().strip() == "no":
-        print("Muy bien, tu saldo actual es de", Presupuesto_inicial, "pesos.\n")
+        initial_budget -= expense
+        print(f"Expense recorded. You have {initial_budget} pesos left.\n")
+        
+    response = input("Do you want to record another expense? ").strip().lower()
+    
+    if response == "yes":
+        print("Okay, let's continue.\n")
+    elif response == "no":
+        print(f"Alright, your current balance is {initial_budget} pesos.\n")
         break
-if Presupuesto_inicial == 0:
-    print("Te haz quedados sin fondos, bro\n")
+
+if initial_budget == 0:
+    print("You have run out of funds, bro\n")
+
