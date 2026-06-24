@@ -1,16 +1,21 @@
-inventario = []
-objetos_prohibidos = ["cuchillo","pistola","bomba","cigarro","alcohol"]
-objetos = 0
-while objetos < 5:
-    objeto = input("¿Qué objeto haz encontrado? ")
-    inventario.append(objeto)
-    objetos +=1
-print(f"Misión de recolección terminada. Tu inventario es: {inventario}")
+inventory = []
+forbidden_items = ["knife", "gun", "bomb", "cigarette", "alcohol"]
+items_count = 0
 
-contrabando = input("Alto ahi, ¿Qué objeto estas buscando oficial? ")
-print(f"Estoy buscando estos objetos prohibidos {objetos_prohibidos}")
-if contrabando in inventario:
-     inventario.remove(contrabando)
-     print("¡Contrabando detectado! Confiscando ahora")
+while items_count < 5:
+    item = input("What item did you find? ")
+    inventory.append(item)
+    items_count += 1
+
+inventory.sort()
+print(f"Collection mission complete. Your inventory is: {inventory}")
+
+contraband = input("Halt! What item are you looking for, officer? ")
+print(f"I am looking for these forbidden items: {forbidden_items}")
+
+if contraband in inventory:
+    inventory.remove(contraband)
+    print("Contraband detected! Confiscating now.")
+    print(f"Your updated inventory is: {inventory}")
 else:
-    print("Todo limpio. Puedes continuar tu viaje.")
+    print("All clean. You may continue your journey.")
